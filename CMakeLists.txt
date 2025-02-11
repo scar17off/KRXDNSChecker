@@ -16,9 +16,6 @@ find_package(CURL CONFIG REQUIRED)
 # Add executable with source file in src directory
 add_executable(KRXDNSChecker src/main.cpp)
 
-# Copy dns_servers.txt to output directory
-configure_file(${CMAKE_SOURCE_DIR}/dns_servers.txt ${CMAKE_BINARY_DIR}/dns_servers.txt COPYONLY)
-
 # Windows-specific configuration
 if(WIN32)
     # Add Windows-specific libraries
@@ -37,4 +34,4 @@ if(WIN32)
             LINK_FLAGS "/manifestuac:\"level='requireAdministrator' uiAccess='false'\""
         )
     endif()
-endif() 
+endif()
